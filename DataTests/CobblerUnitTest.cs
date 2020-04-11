@@ -1,6 +1,7 @@
 using System;
 using ExamTwoCodeQuestions.Data;
 using Xunit;
+using System.ComponentModel;
 
 namespace ExamTwoCodeQuestions.DataTests
 {
@@ -72,5 +73,22 @@ namespace ExamTwoCodeQuestions.DataTests
             var cobbler = new Cobbler();
             Assert.IsAssignableFrom<IOrderItem>(cobbler);
         }
+
+        [Fact]
+        public void DoesCobblerImplementINotifyPropertyChanged()
+        {
+            Cobbler c1 = new Cobbler();
+            Assert.True(c1 is INotifyPropertyChanged);
+        }
+
+        /*
+        [Fact]
+        public void CobblerPropertyChanged()
+        {
+            
+            var cobbler1 = new Cobbler();
+            cobbler1.Fruit = FruitFilling.Blueberry;
+            Assert.PropertyChanged(cobbler1, "Fruit", ???);
+        } I think this should be correct but im not sure what i would put in the last portion*/
     }
 }

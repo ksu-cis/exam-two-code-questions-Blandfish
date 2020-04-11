@@ -23,6 +23,7 @@ namespace ExamTwoQuestions.PointOfSale
         public MainWindow()
         {
             InitializeComponent();
+
         }
     }
 }
